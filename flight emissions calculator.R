@@ -1,17 +1,11 @@
 library(airportr)
 library(tidyverse)
 library(readxl)
+#calculations <- read_excel("aircalculations.xlsx")
+#save(calculations, file="calculations.RData")
 load("calculations.RData")
+
 data("airports")
-
-
-#airportr functions ----
-
-airport_lookup(input = "Raleigh Durham International Airport", input_type = "name", output_type = "IATA")
-
-airport_lookup(input = "TYS")
-
-airport_distance("TYS", "LAX")
 
 
 # calculate emissions for 1 seat per trip ----
@@ -19,6 +13,7 @@ airport_distance("TYS", "LAX")
 # departure = departure city
 # arrival = arrival city
 # flightClass = Unknown, Economy, Economy+, First, or Business
+
 emissions <- function(departure, arrival, flightClass) {
   
   #get departure origin
