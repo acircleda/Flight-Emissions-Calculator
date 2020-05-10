@@ -1,6 +1,6 @@
 library(airportr)
 library(tidyverse)
-library(readxl)
+#library(readxl)
 #calculations <- read_excel("aircalculations.xlsx", sheet="calculations")
 #save(calculations, file="calculations.RData")
 load("calculations.RData")
@@ -71,5 +71,3 @@ emissions <- function(departure, arrival, flightClass = "Unknown", output = "co2
   emissions_calc
   
 }
-
-emissions("TYS", "PEK")
