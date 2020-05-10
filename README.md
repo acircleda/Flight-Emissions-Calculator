@@ -77,8 +77,19 @@ Currently, the function takes three required inputs:
 
 1.  3-digit IATA airport code for the departure city
 2.  3-digit IATA airport code for the arrival city
-3.  Flight class, defined as (case sensitive): + Unknown + Economy +
-    Economy+ + First + Business
+3.  Flight class, defined as (case sensitive):
+      - Unknown (default if blank)
+      - Economy
+      - Economy+
+      - First
+      - Business
+4.  Greenhouse gas metric
+      - co2e - CO2 Equivalent (default if blank)
+          - \[Click here to read about this\]
+            metric(<https://ecometrica.com/assets/GHGs-CO2-CO2e-and-Carbon-What-Do-These-Mean-v2.1.pdf>)
+      - co2 - carbon dioxide
+      - ch4 - methan
+      - n20 - nitrous oxide
 
 ## Example
 
@@ -109,10 +120,10 @@ This will be for Economy class.
 ``` r
 source("flight emissions calculator.R")
 
-emissions("DEN", "PVG", "Economy")
+emissions("DEN", "NRT", "Economy")
 ```
 
-    ## [1] 891.0194
+    ## [1] 1392.587
 
 The output tells me 891 metric tons of CO2 are emitted on this trip.
 
@@ -128,7 +139,7 @@ emissions("DEN", "NRT", "Economy") +
   emissions("NRT", "PVG", "Economy")
 ```
 
-    ## [1] 1076.078
+    ## [1] 1672.292
 
 ## Not a Package
 
